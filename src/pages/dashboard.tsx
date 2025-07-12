@@ -129,6 +129,12 @@ const platforms = [
 ];
 
 import DashboardLayout from "@/components/DashboardLayout";
+ return (
+    <DashboardLayout>
+      <h2 className="text-xl">Welcome to the Dashboard</h2>
+      {/* more content here */}
+    </DashboardLayout>
+  );
 
 
 export default function OSINTToolbox(...args: []) {
