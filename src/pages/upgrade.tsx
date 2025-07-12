@@ -26,7 +26,7 @@ export default function Upgrade() {
         <div className="bg-white p-8 rounded-xl shadow-md max-w-md w-full text-center">
           <h1 className="text-2xl font-bold mb-2 text-gray-800">Upgrade to Premium</h1>
           <p className="text-gray-600 mb-6">
-            Unlock all premium tools by paying <span className="font-semibold">GHS 20</span>.
+            Unlock all premium tools by paying <span className="font-semibold">GHS 10</span>.
           </p>
 
           {user && <PaystackPayment email={user.email} userId={user.id} />}
