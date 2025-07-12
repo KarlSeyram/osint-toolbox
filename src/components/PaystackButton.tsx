@@ -38,6 +38,7 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
     text: "Pay GHS 10",
     onSuccess: handleSuccess,
     onClose: () => alert("Payment closed"),
+    className: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
   };
 
   return <PaystackButton {...componentProps} />;
