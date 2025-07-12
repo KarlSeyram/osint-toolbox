@@ -8,7 +8,7 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
   const router = useRouter();
 
   const publicKey = "pk_live_d94cc6d8172b21877e7e7893283dd2ecd49e897d";
-  const amount = 20 * 100; // GHS 20 in pesewas
+  const amount = 10 * 100; // GHS 20 in pesewas
 
   const handleSuccess = async (ref: any) => {
     try {
@@ -35,7 +35,7 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
     amount,
     publicKey,
     currency: "GHS", // ✅ Important for Ghana accounts
-    text: "Pay GHS 20",
+    text: "Pay GHS 10",
     onSuccess: handleSuccess,
     onClose: () => alert("Payment closed"),
   };
