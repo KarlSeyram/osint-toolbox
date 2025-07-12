@@ -30,16 +30,17 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
     }
   };
 
-  const componentProps = {
-    email,
-    amount,
-    publicKey,
-    currency: "GHS", // ✅ Important for Ghana accounts
-    text: "Pay GHS 10",
-    onSuccess: handleSuccess,
-    onClose: () => alert("Payment closed"),
-    className: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
-  };
+ const componentProps = {
+  email,
+  amount,
+  publicKey,
+  currency: "GHS",
+  text: "Pay GHS 10",
+  onSuccess: handleSuccess,
+  onClose: () => alert("Payment closed"),
+  className: "bg-black hover:bg-green-600 text-lime-400 border border-lime-500 px-4 py-2 rounded-lg font-mono"
+};
+
 
   return <PaystackButton {...componentProps} />;
 };
