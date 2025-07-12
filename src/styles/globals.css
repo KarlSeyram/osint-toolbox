@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mode: dark;
+}
+
+/* Theme: Hacker Dark */
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 120 100% 85%;
+    --card: 0 0% 8%;
+    --card-foreground: 120 100% 85%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 120 100% 85%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 120 100% 85%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 120 50% 60%;
+    --accent: 120 100% 25%;
+    --accent-foreground: 120 100% 85%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 120 100% 50%;
+    --chart-1: 120 100% 50%;
+    --chart-2: 180 100% 50%;
+    --chart-3: 60 100% 50%;
+    --chart-4: 300 100% 50%;
+    --chart-5: 240 100% 50%;
+    --radius: 0.375rem;
+    --hacker-green: 120 100% 50%;
+    --hacker-green-dim: 120 100% 25%;
+    --terminal-bg: 0 0% 8%;
+    --terminal-border: 120 100% 25%;
+  }
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 120 100% 85%;
+    --card: 0 0% 8%;
+    --card-foreground: 120 100% 85%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 120 100% 85%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 120 100% 85%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 120 50% 60%;
+    --accent: 120 100% 25%;
+    --accent-foreground: 120 100% 85%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 120 100% 50%;
+    --chart-1: 120 100% 50%;
+    --chart-2: 180 100% 50%;
+    --chart-3: 60 100% 50%;
+    --chart-4: 300 100% 50%;
+    --chart-5: 240 100% 50%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  }
+}
+
+@layer components {
+  .terminal-window {
+    @apply bg-card border border-primary/30 rounded-lg overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
+  }
+  
+  .terminal-header {
+    @apply bg-secondary/50 px-4 py-2 border-b border-primary/20 flex items-center gap-2;
+  }
+  
+  .terminal-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+  
+  .terminal-dot.red {
+    @apply bg-red-500;
+  }
+  
+  .terminal-dot.yellow {
+    @apply bg-yellow-500;
+  }
+  
+  .terminal-dot.green {
+    @apply bg-green-500;
+  }
+  
+  .hacker-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  
+  .matrix-bg {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--primary) / 0.05) 0%, transparent 50%);
+  }
+  
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), transparent);
+    animation: scan 2s infinite;
+  }
+  
+  @keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  .typing-animation {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--primary)); }
+  }
+}
