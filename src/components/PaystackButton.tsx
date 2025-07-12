@@ -8,7 +8,7 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
   const router = useRouter();
 
   const publicKey = "pk_live_d94cc6d8172b21877e7e7893283dd2ecd49e897d";
-  const amount = 2000 * 100; // GHS 20 in pesewas
+  const amount = 200 * 100; // GHS 20 in pesewas
 
   const handleSuccess = async (ref: any) => {
     try {
