@@ -7,12 +7,11 @@ import { supabase } from "@/lib/supabaseClient";
 const PaystackPayment = ({ email, userId }: { email: string, userId: string }) => {
   const router = useRouter();
 
-  const publicKey = "pk_live_d94cc6d8172b21877e7e7893283dd2ecd49e897d"; // Replace with real key
-  const amount = 2000 * 100;
+  const publicKey = "pk_live_d94cc6d8172b21877e7e7893283dd2ecd49e897d";
+  const amount = 2000 * 100; // GHS 20 in pesewas
 
   const handleSuccess = async (ref: any) => {
     try {
-      // 1. Store payment info
       await supabase.from("payments").insert([
         {
           user_id: userId,
@@ -22,10 +21,8 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
         },
       ]);
 
-      // 2. Mark user as premium
       await supabase.from("profiles").update({ is_premium: true }).eq("id", userId);
 
-      // 3. Redirect
       router.push("/dashboard");
     } catch (error) {
       console.error("Payment update error:", error);
@@ -37,6 +34,7 @@ const PaystackPayment = ({ email, userId }: { email: string, userId: string }) =
     email,
     amount,
     publicKey,
+    currency: "GHS", // ✅ Important for Ghana accounts
     text: "Pay GHS 20",
     onSuccess: handleSuccess,
     onClose: () => alert("Payment closed"),
