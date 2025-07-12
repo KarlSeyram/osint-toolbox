@@ -8,6 +8,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
+  // components/DashboardLayout.tsx (or wherever your layout is)
+import Header from "./Header";
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="p-4">{children}</main>
+    </div>
+  );
+
   useEffect(() => {
     const checkUser = async () => {
       const { data: { session } } = await supabase.auth.getSession();
