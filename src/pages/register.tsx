@@ -32,7 +32,7 @@ export default function RegisterPage() {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full px-4 py-2 mb-4 border rounded-md text-green-500 bg-black border-green-400 placeholder-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+        className="w-full px-4 py-2 mb-4 border rounded-md text-black-500 bg-black border-black-400 placeholder-black-400 focus:outline-none focus:ring-2 focus:ring-black-500"
       />
 
       <input
@@ -40,7 +40,7 @@ export default function RegisterPage() {
         placeholder="Password (min 6 characters)"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="w-full px-4 py-2 mb-6 border rounded-md text-green-500 bg-black border-green-400 placeholder-green-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+        className="w-full px-4 py-2 mb-6 border rounded-md text-black-500 bg-black border-black-400 placeholder-black-400 focus:outline-none focus:ring-2 focus:ring-black-500"
       />
 
       <button
@@ -50,7 +50,7 @@ export default function RegisterPage() {
         Register
       </button>
 
-      <p className="mt-4 text-sm text-green-300">
+      <p className="mt-4 text-sm text-black-300">
         Already have an account?{" "}
         <a href="/login" className="text-green-400 hover:underline">
           Login
@@ -62,7 +62,7 @@ export default function RegisterPage() {
 
 
       {/* ✅ Footer */}
-      <p className="mt-6 text-sm text-gray-400 text-center">
+      <p className="mt-6 text-sm text-green-400 text-center">
         © 2025 Karl Software. All rights reserved.
       </p>
     </div>
