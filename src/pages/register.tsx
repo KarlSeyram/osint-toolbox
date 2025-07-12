@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "@/lib/supabaseClient";
 
-
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +22,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 px-4">
       <div className="bg-white p-8 rounded-xl shadow-md max-w-md w-full text-center">
         <h1 className="text-2xl font-bold mb-2 text-gray-800">Create an Account</h1>
         <p className="text-gray-500 mb-6">Join OSINT and unlock premium features</p>
@@ -58,6 +57,11 @@ export default function RegisterPage() {
           </a>
         </p>
       </div>
+
+      {/* ✅ Footer */}
+      <p className="mt-6 text-sm text-gray-400 text-center">
+        © 2025 Karl Software. All rights reserved.
+      </p>
     </div>
   );
 }
