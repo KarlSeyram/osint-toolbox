@@ -833,24 +833,28 @@ export default function OSINTToolbox(...args: []) {
           </Tabs>
         </div>
 
-        {/* Footer */}
-        <footer className="border-t border-primary/20 bg-card/30 backdrop-blur-sm mt-12">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4" />
-                <span>OSINT Toolbox v2.0</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span>For educational and ethical use only</span>
-                <Badge variant="outline" className="gap-1">
-                  <Lock className="w-3 h-3" />
-                  Secure
-                </Badge>
-              </div>
-            </div>
-          </div>
-        </footer>
+      <footer className="border-t border-primary/20 bg-card/30 backdrop-blur-sm mt-12">
+  <div className="container mx-auto px-4 py-6 space-y-2">
+    <div className="flex items-center justify-between text-sm text-muted-foreground">
+      <div className="flex items-center gap-2">
+        <Terminal className="w-4 h-4" />
+        <span>OSINT Toolbox v2.0</span>
+      </div>
+      <div className="flex items-center gap-4">
+        <span>For educational and ethical use only</span>
+        <Badge variant="outline" className="gap-1">
+          <Lock className="w-3 h-3" />
+          Secure
+        </Badge>
+      </div>
+    </div>
+
+    {/* ✅ Copyright Line */}
+    <div className="text-center text-xs text-muted-foreground">
+      © 2025 Karl Software. All rights reserved.
+    </div>
+  </div>
+</footer>
       </div>
     </>
   );
